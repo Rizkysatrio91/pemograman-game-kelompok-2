@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Menentukan karakter encoding dokumen sebagai UTF-8 untuk mendukung berbagai karakter -->
+    <meta charset="UTF-8" />
+
+    <!-- Menyesuaikan kompatibilitas untuk Internet Explorer -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Menentukan viewport agar tampilan responsif pada berbagai perangkat -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Judul halaman yang akan ditampilkan di tab browser -->
+    <title>SLIDE PUZZLE</title>
+
+    <!-- Menghubungkan file CSS eksternal untuk styling halaman -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Menambahkan elemen audio untuk memutar backsound secara otomatis dan berulang -->
+    <audio autoplay loop>
+      <source src="assets/backsong.mp3" type="audio/mp3" />
+    </audio>
+
+    <!-- Container utama untuk tombol keluar -->
+    <div class="container">
+      <!-- Tombol untuk keluar dari permainan dan kembali ke halaman lain -->
+      <a href="/game.html"><button>Keluar</button></a>
+    </div>
+
+    <!-- Container utama untuk permainan puzzle -->
+    <div id="puzzle_container">
+      <!-- Setiap blok puzzle bernomor 1-8 -->
+      <div class="puzzle_block">1</div>
+      <div class="puzzle_block">2</div>
+      <div class="puzzle_block">3</div>
+      <div class="puzzle_block">4</div>
+      <div class="puzzle_block">5</div>
+      <div class="puzzle_block">6</div>
+      <div class="puzzle_block">7</div>
+      <div class="puzzle_block">8</div>
+    </div>
+
+    <!-- Container untuk memilih tingkat kesulitan -->
+    <div id="difficulty_container">
+      <!-- Tingkat kesulitan yang dapat dipilih oleh pemain -->
+      <div class="difficulty_button active">EASY</div>
+      <div class="difficulty_button">MEDIUM</div>
+      <div class="difficulty_button">HARD</div>
+    </div>
+
+    <!-- Menghubungkan file JavaScript eksternal untuk mengontrol logika permainan -->
+    <script src="script.js"></script>
+  </body>
+</html>

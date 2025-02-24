@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <!-- Menentukan karakter set yang digunakan pada halaman -->
+    <meta charset="UTF-8" />
+
+    <!-- Menentukan tampilan halaman agar responsif di berbagai perangkat -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Menentukan judul halaman yang ditampilkan di tab browser -->
+    <title>Profil Pembuat - EdgeGame</title>
+
+    <!-- Styling CSS untuk halaman -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Styling umum untuk body dan html */
+      body,
+      html {
+        min-height: 100%;
+        overflow-y: auto;
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(
+          to right,
+          #1e3c72,
+          #2a5298
+        ); /* Background gradasi biru */
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 0;
+      }
+
+      /* Styling untuk bagian profil */
+      .profil {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* Styling untuk container utama */
+      .container {
+        background: #fff;
+        padding: 30px;
+        border-radius: 20px;
+        width: 90%;
+        max-width: 800px;
+        box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan pada kotak */
+        text-align: center;
+        position: relative;
+      }
+
+      /* Styling untuk tombol "Kembali ke Beranda" */
+      .btn-game {
+        display: inline-block;
+        padding: 12px 30px;
+        background: linear-gradient(
+          to right,
+          #00c6ff,
+          #0072ff
+        ); /* Gradasi biru untuk tombol */
+        color: #fff;
+        text-decoration: none;
+        border-radius: 50px; /* Membuat tombol berbentuk bulat */
+        font-size: 1rem;
+        font-weight: 600;
+        transition: background 0.3s ease, transform 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0, 114, 255, 0.4);
+        position: absolute;
+        top: -25px;
+        left: 50%;
+        transform: translateX(-50%); /* Posisi tombol di tengah */
+      }
+
+      /* Efek hover pada tombol */
+      .btn-game:hover {
+        background: linear-gradient(to right, #0072ff, #00c6ff);
+        transform: translateX(-50%) translateY(-3px); /* Efek gerakan tombol saat hover */
+      }
+
+      /* Styling untuk judul halaman */
+      .title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: #2a5298; /* Warna biru pada judul */
+      }
+
+      /* Styling untuk gambar dalam profil */
+      .card-img-top {
+        object-fit: cover;
+        height: 300px;
+        width: 100%;
+        border-radius: 15px;
+        transition: transform 0.5s ease;
+      }
+
+      /* Efek hover pada gambar (zoom-in) */
+      .card-img-top:hover {
+        transform: scale(1.05);
+      }
+
+      /* Styling untuk nama kelompok */
+      .card-title {
+        font-size: 1.8rem;
+        font-weight: 600;
+        margin: 15px 0;
+        color: #2a5298;
+      }
+
+      /* Styling untuk deskripsi tentang kelompok */
+      .card-text {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #555; /* Warna teks abu-abu untuk deskripsi */
+      }
+
+      /* Media query untuk tampilan di perangkat dengan lebar layar kecil */
+      @media (max-width: 768px) {
+        .title {
+          font-size: 2rem; /* Mengurangi ukuran judul */
+        }
+        .card-img-top {
+          height: 250px; /* Menyesuaikan tinggi gambar di perangkat kecil */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Bagian Profil Pembuat -->
+    <div class="profil">
+      <div class="container">
+        <!-- Tombol untuk kembali ke halaman utama -->
+        <a href="index.html" class="btn btn-game">Kembali ke Beranda</a>
+
+        <!-- Judul Profil Pembuat -->
+        <h1 class="title">Profil Pembuat</h1>
+
+        <!-- Gambar Profil Kelompok -->
+        <img
+          src="assets/gambar/kelompok2.png"
+          alt="Profil Kelompok"
+          class="card-img-top"
+        />
+
+        <!-- Nama Kelompok -->
+        <h5 class="card-title">Kelompok 2 - Pemrograman Game</h5>
+
+        <!-- Deskripsi tentang kelompok -->
+        <p class="card-text">
+          Kami adalah mahasiswa yang mengembangkan
+          <strong>EdgeGame</strong> sebagai platform edukatif dan hiburan,
+          menghadirkan permainan seru dan Asik untuk semua kalangan.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

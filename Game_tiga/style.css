@@ -1,0 +1,84 @@
+/* Mengatur semua elemen agar padding dan margin default dihapus */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; /* Memastikan elemen tetap dalam ukuran yang ditentukan */
+}
+
+/* Mendefinisikan variabel warna yang bisa digunakan di seluruh dokumen */
+:root {
+  --orange: #f2c14e; /* Warna utama (kuning-oranye) */
+  --winning-blocks: #2d414b; /* Warna blok kemenangan */
+}
+
+/* Mengatur gaya dasar pada body */
+body {
+  color: var(--orange); /* Menggunakan warna utama untuk teks */
+  font-family: "Finger Paint", cursive; /* Menggunakan font unik untuk tampilan yang lebih menarik */
+}
+
+/* Mengatur tampilan teks h1 */
+h1 {
+  font-size: 54px; /* Ukuran besar untuk judul */
+  text-transform: uppercase; /* Mengubah semua huruf menjadi huruf kapital */
+}
+
+/* Container utama permainan */
+.container {
+  padding: 40px; /* Memberikan ruang di dalam container */
+  height: 100vh; /* Mengatur tinggi container sesuai tinggi viewport */
+  display: flex; /* Menggunakan flexbox untuk tata letak */
+  justify-content: center; /* Memusatkan elemen secara horizontal */
+  align-items: center; /* Memusatkan elemen secara vertikal */
+  flex-direction: column; /* Menyusun elemen secara vertikal */
+  background-color: #37505c; /* Warna latar belakang */
+}
+
+/* Area papan permainan Tic Tac Toe */
+#gameboard {
+  width: 300px; /* Menetapkan lebar papan permainan */
+  display: flex; /* Menggunakan flexbox agar elemen tersusun rapi */
+  flex-wrap: wrap; /* Memastikan elemen tetap dalam satu baris dan turun ke bawah jika diperlukan */
+  margin-top: 40px; /* Menambahkan jarak antara papan permainan dan elemen lainnya */
+}
+
+/* Styling untuk setiap kotak dalam papan permainan */
+.box {
+  height: 100px; /* Tinggi kotak */
+  width: 100px; /* Lebar kotak */
+  display: flex; /* Menggunakan flexbox */
+  align-items: center; /* Memusatkan isi vertikal */
+  justify-content: center; /* Memusatkan isi horizontal */
+  color: var(--orange); /* Warna teks */
+  font-size: 120px; /* Ukuran teks besar */
+  border-right: 2px solid; /* Menambahkan garis tepi kanan */
+  border-bottom: 2px solid; /* Menambahkan garis tepi bawah */
+}
+
+/* Menghapus garis tepi kanan untuk setiap kotak ketiga (agar batas sesuai dengan grid 3x3) */
+.box:nth-child(3n) {
+  border-right: none;
+}
+
+/* Menghapus garis bawah untuk baris terakhir pada grid (kotak 7, 8, dan 9) */
+.box:nth-child(6) ~ .box {
+  border-bottom: none;
+}
+
+/* Styling untuk tombol */
+button {
+  padding: 10px 20px; /* Menambahkan ruang di dalam tombol */
+  border-radius: 10px; /* Membuat sudut tombol membulat */
+  background-color: var(--orange); /* Menggunakan warna utama */
+  color: #333; /* Warna teks tombol */
+  border-color: var(--orange); /* Warna border sesuai dengan warna utama */
+  font-size: 18px; /* Ukuran teks */
+  transition: 200ms transform; /* Animasi saat tombol ditekan */
+  font-weight: 600; /* Membuat teks lebih tebal */
+}
+
+/* Efek hover pada tombol */
+button:hover {
+  cursor: pointer; /* Mengubah kursor menjadi tangan saat dihover */
+  transform: translateY(-2px); /* Memberikan efek naik sedikit saat dihover */
+}

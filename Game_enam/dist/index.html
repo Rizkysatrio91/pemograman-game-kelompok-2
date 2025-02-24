@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JS Planet Defense Game</title>
+
+    <!-- Menggunakan reset CSS untuk menghapus gaya bawaan browser -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+    />
+
+    <!-- Menghubungkan file CSS untuk gaya tampilan -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!-- Menambahkan audio latar belakang yang diputar secara otomatis dan berulang -->
+    <audio autoplay loop>
+      <source src="assets/backsong.mp3" type="audio/mp3" />
+      <!-- Jika browser tidak mendukung format audio -->
+      Your browser does not support the audio element.
+    </audio>
+
+    <!-- Elemen Canvas digunakan sebagai tempat utama untuk permainan -->
+    <canvas id="canvas"></canvas>
+
+    <!-- Tombol kembali untuk kembali ke halaman sebelumnya -->
+    <button id="backButton">Kembali</button>
+
+    <!-- Menghubungkan file JavaScript utama -->
+    <script src="./script.js"></script>
+
+    <!-- Skrip tambahan untuk menangani tombol kembali -->
+    <script>
+      document
+        .getElementById("backButton")
+        .addEventListener("click", function () {
+          window.history.back(); // Menggunakan fitur back dari browser untuk kembali ke halaman sebelumnya
+        });
+    </script>
+  </body>
+</html>

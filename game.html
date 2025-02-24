@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <!-- Tag meta dasar untuk pengkodean karakter dan tampilan responsif -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EdgeGames - Game Selection</title>
+    <!-- Menghubungkan dengan file CSS eksternal -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <style>
+      /* Mengatur ulang gaya default */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Gaya dasar untuk body dengan tema gelap */
+      body {
+        background: #0f172a;
+        font-family: "Poppins", sans-serif;
+        color: #fff;
+        min-height: 100vh;
+      }
+
+      /* Gaya navbar dengan efek kaca */
+      .navbar {
+        background: rgba(15, 23, 42, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 1rem 0;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+      }
+
+      /* Gaya untuk kontainer logo */
+      .navbar-brand {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      /* Gaya untuk gambar logo */
+      .navbar-brand img {
+        width: 40px;
+        height: 40px;
+        transition: transform 0.3s ease;
+      }
+
+      /* Efek gradien untuk teks logo */
+      .navbar-brand span {
+        font-weight: 700;
+        font-size: 1.5rem;
+        background: linear-gradient(45deg, #00f5a0, #00d9f5);
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+        -webkit-text-fill-color: transparent;
+      }
+
+      /* Gaya untuk tautan navigasi */
+      .navbar-nav .nav-link {
+        color: #fff !important;
+        margin: 0 0.5rem;
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      /* Efek hover dan aktif untuk tautan navigasi */
+      .navbar-nav .nav-link:hover,
+      .navbar-nav .nav-link.active {
+        background: rgba(255, 255, 255, 0.1);
+        transform: translateY(-2px);
+      }
+
+      /* Gaya untuk bagian game utama dengan latar belakang gradien */
+      .game-section {
+        padding: 120px 0 60px;
+        min-height: 100vh;
+        background: radial-gradient(
+            circle at top right,
+            rgba(0, 245, 160, 0.1),
+            transparent 70%
+          ),
+          radial-gradient(
+            circle at bottom left,
+            rgba(0, 217, 245, 0.1),
+            transparent 70%
+          );
+      }
+
+      /* Gaya untuk tombol kembali dengan gradien */
+      .back-button {
+        background: linear-gradient(45deg, #00f5a0, #00d9f5);
+        text-decoration: none;
+        border: none;
+        padding: 0.8rem 2rem;
+        border-radius: 12px;
+        color: #0f172a;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        margin-bottom: 2rem;
+        display: inline-block;
+      }
+
+      /* Efek hover untuk tombol kembali */
+      .back-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 245, 160, 0.2);
+        color: #0f172a;
+      }
+
+      /* Gaya untuk kartu game dengan efek kaca */
+      .game-card {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 20px;
+        overflow: hidden;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.4s ease;
+        height: 100%;
+      }
+
+      /* Animasi hover untuk kartu game */
+      .game-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 245, 160, 0.2);
+        border-color: rgba(0, 245, 160, 0.3);
+      }
+
+      /* Gaya untuk gambar dalam kartu game */
+      .game-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      /* Kontainer konten kartu game */
+      .game-card-content {
+        padding: 1.5rem;
+        text-align: center;
+      }
+
+      /* Gaya untuk judul kartu game */
+      .game-card h5 {
+        color: #fff;
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+
+      /* Gaya untuk tombol mulai dengan gradien */
+      .play-button {
+        background: linear-gradient(45deg, #00f5a0, #00d9f5);
+        color: #0f172a;
+        border: none;
+        padding: 0.8rem 2rem;
+        border-radius: 12px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      /* Efek hover untuk tombol mulai */
+      .play-button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(0, 245, 160, 0.2);
+        color: #0f172a;
+      }
+
+      /* Animasi fade up untuk kartu */
+      .fade-up {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeUp 0.6s ease forwards;
+      }
+
+      /* Keyframes untuk animasi fade up */
+      @keyframes fadeUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Penyesuaian desain responsif */
+      @media (max-width: 768px) {
+        .game-section {
+          padding: 100px 0 40px;
+        }
+
+        .game-card {
+          margin-bottom: 1.5rem;
+        }
+
+        .navbar-brand img {
+          width: 32px;
+          height: 32px;
+        }
+
+        .navbar-brand span {
+          font-size: 1.25rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Musik latar belakang -->
+    <audio autoplay loop>
+      <source src="assets/backsong.mp3" type="audio/mp3" />
+      Browser Anda tidak mendukung elemen audio.
+    </audio>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <!-- Logo dan nama brand -->
+        <a class="navbar-brand" href="#">
+          <img src="assets/gambar/logoweb.png" alt="Edge Games Logo" />
+          <span>EdgeGames</span>
+        </a>
+        <!-- Tombol menu untuk tampilan mobile -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Menu navigasi -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="game.html">Games</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Bagian utama game -->
+    <section class="game-section">
+      <div class="container">
+        <!-- Tombol kembali dengan ikon -->
+        <a href="index.html" class="back-button">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="m12 19-7-7 7-7" />
+            <path d="M19 12H5" />
+          </svg>
+          Kembali
+        </a>
+        <!-- Header bagian -->
+        <div class="section-header animate__animated animate__fadeIn">
+          <h1>EdgeGames | Pemrograman Game</h1>
+        </div>
+        <!-- Grid kartu game -->
+        <div class="row g-4">
+          <!-- Kartu Game 1: Tebak Gambar -->
+          <div class="col-lg-4 col-md-6" style="animation-delay: 0.1s">
+            <div class="game-card fade-up">
+              <img src="assets/gambar/tebakgambar.png" alt="Tebak Gambar" />
+              <div class="game-card-content">
+                <h5>Tebak Gambar</h5>
+                <a href="Game_satu/game1.html" class="play-button"
+                  >Mulai Main</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Kartu Game 2: Catur -->
+          <div class="col-lg-4 col-md-6" style="animation-delay: 0.2s">
+            <div class="game-card fade-up">
+              <img src="assets/gambar/catur.png" alt="Catur" />
+              <div class="game-card-content">
+                <h5>Catur</h5>
+                <a href="Game_dua/index.html" class="play-button">Mulai Main</a>
+              </div>
+            </div>
+          </div>
+          <!-- Kartu Game 3: Tic Tac Toe -->
+          <div class="col-lg-4 col-md-6" style="animation-delay: 0.3s">
+            <div class="game-card fade-up">
+              <img src="assets/gambar/tic tac toe.png" alt="Tic Tac Toe" />
+              <div class="game-card-content">
+                <h5>Tic Tac Toe</h5>
+                <a href="Game_tiga/index.html" class="play-button"
+                  >Mulai Main</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Kartu Game 4: Susun Angka -->
+          <div class="col-lg-4 col-md-6" style="animation-delay: 0.4s">
+            <div class="game-card fade-up">
+              <img src="assets/gambar/susunangka.png" alt="Susun Angka" />
+              <div class="game-card-content">
+                <h5>Susun Angka</h5>
+                <a href="Game_empat/index.html" class="play-button"
+                  >Mulai Main</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Kartu Game 5: Tembak Meteor -->
+          <div class="col-lg-4 col-md-6" style="animation-delay: 0.5s">
+            <div class="game-card fade-up">
+              <img src="assets/gambar/tembakmeteor.png" alt="Tembak Meteor" />
+              <div class="game-card-content">
+                <h5>Tembak Meteor</h5>
+                <a href="Game_enam/dist/index.html" class="play-button"
+                  >Mulai Main</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JavaScript Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

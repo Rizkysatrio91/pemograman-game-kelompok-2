@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Menentukan karakter encoding dokumen sebagai UTF-8 untuk mendukung berbagai karakter -->
+    <meta charset="UTF-8" />
+
+    <!-- Menyesuaikan kompatibilitas untuk Internet Explorer -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Menentukan viewport agar tampilan responsif pada berbagai perangkat -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Judul halaman yang akan ditampilkan di tab browser -->
+    <title>Tic Tac Toe</title>
+
+    <!-- Menghubungkan file CSS eksternal untuk styling halaman -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Mempercepat koneksi ke Google Fonts untuk mengurangi waktu pemuatan -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Menghubungkan font "Finger Paint" dari Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Menambahkan elemen audio untuk memutar backsound secara otomatis dan berulang -->
+    <audio autoplay loop>
+      <source src="assets/backsong.mp3" type="audio/mp3" />
+      <!-- Pesan fallback jika browser tidak mendukung elemen audio -->
+      Your browser does not support the audio element.
+    </audio>
+
+    <!-- Container utama untuk permainan -->
+    <div class="container">
+      <!-- Judul utama permainan -->
+      <h1 id="playerText">Tic Tac Toe</h1>
+
+      <!-- Tombol navigasi -->
+      <div>
+        <!-- Tombol untuk keluar dari permainan dan kembali ke halaman lain -->
+        <a href="/game.html"><button id="BackBtn">Keluar</button></a>
+
+        <!-- Tombol untuk me-restart permainan -->
+        <button id="restartBtn">Muat Ulang</button>
+      </div>
+
+      <!-- Area papan permainan Tic Tac Toe -->
+      <div id="gameboard">
+        <!-- Kotak permainan yang merepresentasikan 9 sel pada papan Tic Tac Toe -->
+        <div class="box" id="0"></div>
+        <div class="box" id="1"></div>
+        <div class="box" id="2"></div>
+        <div class="box" id="3"></div>
+        <div class="box" id="4"></div>
+        <div class="box" id="5"></div>
+        <div class="box" id="6"></div>
+        <div class="box" id="7"></div>
+        <div class="box" id="8"></div>
+      </div>
+
+      <!-- Informasi level permainan -->
+      <p>Level: <span id="level">1</span></p>
+
+      <!-- Informasi jumlah nyawa yang tersisa dalam permainan -->
+      <p>Life: <span id="life">3</span></p>
+    </div>
+
+    <!-- Menghubungkan file JavaScript eksternal untuk logika permainan -->
+    <script src="game_logic.js"></script>
+  </body>
+</html>

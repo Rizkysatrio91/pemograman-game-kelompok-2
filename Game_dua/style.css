@@ -1,0 +1,372 @@
+/* Mengatur elemen html dan body agar memiliki lebar dan tinggi penuh, 
+   serta menghilangkan padding dan margin default browser */
+html,
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif; /* Menggunakan font sans-serif sebagai default */
+}
+
+/* Mengatur semua elemen di dalam div agar tidak memiliki padding dan margin default */
+div * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; /* Memastikan elemen tetap dalam ukuran yang ditentukan */
+}
+
+/* Styling tombol */
+button {
+  background: #282a3a; /* Warna latar belakang tombol */
+  color: #fff; /* Warna teks tombol */
+  border-radius: 5px; /* Membuat sudut tombol membulat */
+  padding: 10px 20px; /* Menambahkan padding di dalam tombol */
+  border: 0; /* Menghilangkan border */
+  cursor: pointer; /* Mengubah kursor menjadi tangan saat tombol dihover */
+  font-family: Arial, Helvetica, sans-serif; /* Menggunakan font Arial atau Helvetica */
+  font-size: 18pt; /* Mengatur ukuran teks tombol */
+  font-weight: bold; /* Membuat teks tombol tebal */
+}
+
+/* Container dengan flexbox agar kontennya dapat dipusatkan */
+.container {
+  display: flex;
+  justify-content: center; /* Memusatkan elemen secara horizontal */
+  align-items: center; /* Memusatkan elemen secara vertikal */
+  height: 15vh; /* Mengatur tinggi container sebesar 15% dari tinggi viewport */
+}
+
+/* Styling untuk elemen dengan id "turn" */
+#turn {
+  max-width: 451px; /* Menetapkan lebar maksimum */
+  max-height: 30px; /* Menetapkan tinggi maksimum */
+  width: 100%;
+  height: 100%;
+  position: relative; /* Posisi relatif agar elemen bisa dipindah dalam container */
+  float: right; /* Mengapungkan elemen ke kanan */
+  border-radius: 5px; /* Membuat sudut membulat */
+  border: 1px solid rgb(0, 0, 0); /* Menambahkan border hitam */
+  border-style: inset; /* Gaya border inset */
+  text-align: center; /* Memusatkan teks dalam elemen */
+  padding: 5px 0 0 0; /* Padding atas */
+  background: #fff; /* Latar belakang putih */
+  transition: 0.85s linear; /* Animasi transisi */
+}
+
+/* Styling untuk elemen yang menunjukkan giliran */
+.turnhighlight {
+  background: #5cb85c !important; /* Warna hijau dengan prioritas tinggi */
+  color: #fff; /* Warna teks putih */
+}
+
+/* Styling untuk area permainan */
+#game {
+  max-width: 504px;
+  max-height: 504px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  margin: 20px auto; /* Memberikan jarak atas dan bawah serta memusatkan secara horizontal */
+}
+
+/* Styling untuk setiap sel dalam permainan */
+.cellprefix {
+  width: 100%;
+  height: 100%;
+  max-width: 50px;
+  max-height: 50px;
+  float: left; /* Mengatur agar elemen mengapung ke kiri */
+  margin: 3px;
+  padding: 15px 0 0 20px;
+}
+
+/* Styling untuk sel permainan */
+.gamecell {
+  border: 1px solid #000;
+  width: 100%;
+  height: 100%;
+  max-width: 50px;
+  max-height: 50px;
+  float: left;
+  margin: 3px;
+  transition: all 0.5s ease-in-out; /* Efek transisi */
+  border-radius: 5px;
+  font-size: 30pt;
+  padding: 0 0 0 6px;
+  cursor: pointer; /* Menjadikan kursor berubah saat dihover */
+  z-index: 1;
+}
+
+/* Efek hover pada sel permainan */
+.gamecell:hover {
+  color: #fff;
+  background: rgba(37, 88, 228, 0.712); /* Efek transparan biru */
+  z-index: 2;
+  transform: translate(10px, -10px); /* Memberikan efek pergeseran */
+  animation: neonBlueText 1.5s ease-in-out infinite alternate; /* Efek animasi neon */
+}
+
+/* Warna abu-abu */
+.grey {
+  background: rgba(128, 128, 128, 0.801);
+}
+
+/* Warna hijau */
+.green {
+  background: rgb(
+    65,
+    161,
+    73
+  ) !important; /* Warna hijau dengan prioritas tinggi */
+}
+
+/* Animasi teks neon */
+.neonblue_txt {
+  animation: neonBlueText 1.5s ease-in-out infinite alternate;
+}
+
+.neonorange_txt {
+  animation: neonOrangeText 1.5s ease-in-out infinite alternate;
+}
+
+.neongreen_txt {
+  animation: neonGreenText 1.5s ease-in-out infinite alternate;
+}
+
+/* --- Animasi efek neon untuk teks --- */
+@keyframes neonBlueText {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228dff,
+      0 0 70px #228dff, 0 0 80px #228dff, 0 0 100px #228dff, 0 0 150px #228dff;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228dff,
+      0 0 35px #228dff, 0 0 40px #228dff, 0 0 50px #228dff, 0 0 75px #228dff;
+  }
+}
+
+/* Animasi efek neon oranye */
+@keyframes neonOrangeText {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff9900,
+      0 0 70px #ff9900, 0 0 80px #ff9900, 0 0 100px #ff9900, 0 0 150px #ff9900;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff9900,
+      0 0 35px #ff9900, 0 0 40px #ff9900, 0 0 50px #ff9900, 0 0 75px #ff9900;
+  }
+}
+
+/* Animasi efek neon hijau */
+@keyframes neonGreenText {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #b6ff00,
+      0 0 70px #b6ff00, 0 0 80px #b6ff00, 0 0 100px #b6ff00, 0 0 150px #b6ff00;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #b6ff00,
+      0 0 35px #b6ff00, 0 0 40px #b6ff00, 0 0 50px #b6ff00, 0 0 75px #b6ff00;
+  }
+}
+
+/* Efek goyangan kecil (shake) */
+@keyframes shake-little {
+  2% {
+    transform: translate(1px, 0px) rotate(0.5deg);
+  }
+  50% {
+    transform: translate(-1px, 1px) rotate(-0.5deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0);
+  }
+}
+
+.shake-little {
+  animation-name: shake-little;
+  animation-duration: 100ms;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+/* Pause animasi saat tidak dihover */
+.shake-freeze:hover,
+.shake-trigger:hover .shake-freeze {
+  animation-play-state: paused;
+}
+
+/* Efek goyangan kecil akan berjalan ketika elemen dihover */
+.shake-freeze:hover,
+.shake-trigger:hover .shake-freeze,
+.shake-little:hover,
+.shake-trigger:hover .shake-little {
+  animation-play-state: running; /* Mengaktifkan animasi ketika elemen dihover */
+}
+
+/* Animasi "shake-little" yang memberikan efek goyangan kecil */
+@keyframes shake-little {
+  /* Setiap persentase mengubah posisi dan rotasi sedikit demi sedikit */
+  2% {
+    transform: translate(1px, 0px) rotate(0.5deg);
+  }
+  4% {
+    transform: translate(1px, 0px) rotate(0.5deg);
+  }
+  6% {
+    transform: translate(1px, 1px) rotate(0.5deg);
+  }
+  8% {
+    transform: translate(0px, 0px) rotate(0.5deg);
+  }
+  10% {
+    transform: translate(1px, 0px) rotate(0.5deg);
+  }
+  12% {
+    transform: translate(0px, 0px) rotate(0.5deg);
+  }
+  14% {
+    transform: translate(1px, 1px) rotate(0.5deg);
+  }
+  16% {
+    transform: translate(0px, 1px) rotate(0.5deg);
+  }
+  18% {
+    transform: translate(1px, 0px) rotate(0.5deg);
+  }
+  20% {
+    transform: translate(0px, 1px) rotate(0.5deg);
+  }
+  22% {
+    transform: translate(0px, 0px) rotate(0.5deg);
+  }
+  24% {
+    transform: translate(0px, 0px) rotate(0.5deg);
+  }
+  26% {
+    transform: translate(1px, 1px) rotate(0.5deg);
+  }
+  28% {
+    transform: translate(0px, 1px) rotate(0.5deg);
+  }
+  30% {
+    transform: translate(0px, 0px) rotate(0.5deg);
+  }
+  32% {
+    transform: translate(1px, 1px) rotate(0.5deg);
+  }
+  34% {
+    transform: translate(0px, 1px) rotate(0.5deg);
+  }
+  36% {
+    transform: translate(0px, 1px) rotate(0.5deg);
+  }
+  38% {
+    transform: translate(0px, 0px) rotate(0.5deg);
+  }
+  40% {
+    transform: translate(1px, 0px) rotate(0.5deg);
+  }
+  42% {
+    transform: translate(0px, 1px) rotate(0.5deg);
+  }
+  44% {
+    transform: translate(0px, 1px) rotate(0.5deg);
+  }
+  46% {
+    transform: translate(0px, 0px) rotate(0.5deg);
+  }
+  48% {
+    transform: translate(1px, 0px) rotate(0.5deg);
+  }
+  50% {
+    transform: translate(1px, 1px) rotate(0.5deg);
+  }
+  52% {
+    transform: translate(0px, 0px) rotate(0.5deg);
+  }
+  54% {
+    transform: translate(1px, 1px) rotate(0.5deg);
+  }
+  56% {
+    transform: translate(0px, 1px) rotate(0.5deg);
+  }
+  58% {
+    transform: translate(1px, 0px) rotate(0.5deg);
+  }
+  60% {
+    transform: translate(1px, 1px) rotate(0.5deg);
+  }
+  62% {
+    transform: translate(0px, 1px) rotate(0.5deg);
+  }
+  64% {
+    transform: translate(0px, 0px) rotate(0.5deg);
+  }
+  66% {
+    transform: translate(1px, 0px) rotate(0.5deg);
+  }
+  68% {
+    transform: translate(0px, 0px) rotate(0.5deg);
+  }
+  70% {
+    transform: translate(1px, 0px) rotate(0.5deg);
+  }
+  72% {
+    transform: translate(1px, 1px) rotate(0.5deg);
+  }
+  74% {
+    transform: translate(1px, 1px) rotate(0.5deg);
+  }
+  76% {
+    transform: translate(0px, 0px) rotate(0.5deg);
+  }
+  78% {
+    transform: translate(0px, 0px) rotate(0.5deg);
+  }
+  80% {
+    transform: translate(1px, 0px) rotate(0.5deg);
+  }
+  82% {
+    transform: translate(1px, 1px) rotate(0.5deg);
+  }
+  84% {
+    transform: translate(0px, 1px) rotate(0.5deg);
+  }
+  86% {
+    transform: translate(1px, 1px) rotate(0.5deg);
+  }
+  88% {
+    transform: translate(1px, 1px) rotate(0.5deg);
+  }
+  90% {
+    transform: translate(0px, 1px) rotate(0.5deg);
+  }
+  92% {
+    transform: translate(1px, 0px) rotate(0.5deg);
+  }
+  94% {
+    transform: translate(1px, 0px) rotate(0.5deg);
+  }
+  96% {
+    transform: translate(1px, 0px) rotate(0.5deg);
+  }
+  98% {
+    transform: translate(1px, 1px) rotate(0.5deg);
+  }
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0); /* Kembali ke posisi awal */
+  }
+}
+
+/* Efek shake-little akan diterapkan secara terus-menerus */
+.shake-little:hover,
+.shake-trigger:hover .shake-little,
+.shake-little.shake-freeze,
+.shake-little.shake-constant {
+  animation-name: shake-little; /* Menggunakan animasi shake-little */
+  animation-duration: 100ms; /* Durasi animasi pendek */
+  animation-timing-function: ease-in-out; /* Animasi berjalan mulus */
+  animation-iteration-count: infinite; /* Animasi berjalan terus-menerus */
+}

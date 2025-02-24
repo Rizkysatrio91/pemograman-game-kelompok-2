@@ -1,0 +1,115 @@
+/* Mengatur semua elemen agar tidak memiliki margin dan padding default */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Memastikan elemen tetap dalam ukuran yang ditentukan */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Font default */
+}
+
+/* Mendefinisikan variabel warna global */
+:root {
+  --bgcol: #37474f; /* Warna latar belakang utama */
+  --mcol0: #29b6f6; /* Warna biru terang */
+  --mcol1: #2196f3; /* Warna biru sedang */
+  --mcol2: #1976d2; /* Warna biru gelap */
+  --txtcol0: #90a4ae; /* Warna teks abu-abu terang */
+  --txtcol1: #607d8b; /* Warna teks abu-abu sedang */
+  --whitecol: #eceff1; /* Warna putih pucat */
+  --darkcol: #263238; /* Warna latar belakang gelap */
+}
+
+/* Mengatur tata letak dasar pada body */
+body {
+  display: flex;
+  flex-direction: column; /* Menyusun elemen secara vertikal */
+  align-items: center; /* Memusatkan elemen secara horizontal */
+  padding-top: 15vh; /* Memberikan jarak atas */
+  background-color: var(--bgcol); /* Menggunakan warna latar belakang utama */
+}
+
+/* Styling untuk tombol */
+button {
+  background: #282a3a; /* Warna latar belakang tombol */
+  color: #fff; /* Warna teks putih */
+  border-radius: 5px; /* Membuat sudut tombol membulat */
+  padding: 10px 20px; /* Memberikan padding di dalam tombol */
+  border: 0; /* Menghilangkan border */
+  cursor: pointer; /* Mengubah kursor menjadi tangan saat tombol dihover */
+  font-family: Arial, Helvetica, sans-serif; /* Font tombol */
+  font-size: 18pt; /* Ukuran teks tombol */
+  font-weight: bold; /* Membuat teks tombol tebal */
+}
+
+/* Container utama untuk tombol keluar */
+.container {
+  display: flex;
+  justify-content: center; /* Memusatkan tombol secara horizontal */
+  align-items: center; /* Memusatkan tombol secara vertikal */
+  height: 8vh; /* Mengatur tinggi container */
+}
+
+/* Container utama untuk papan puzzle */
+#puzzle_container {
+  position: relative; /* Memungkinkan posisi absolut untuk elemen di dalamnya */
+  width: 50vh; /* Lebar papan permainan */
+  height: 50vh; /* Tinggi papan permainan */
+  background-color: var(--darkcol); /* Warna latar belakang puzzle */
+  border-radius: 8px; /* Membuat sudut papan puzzle membulat */
+  border: 1px solid var(--mcol0); /* Border dengan warna biru terang */
+  box-shadow: 0px 8px 0px var(--mcol0); /* Efek bayangan pada papan puzzle */
+}
+
+/* Styling untuk setiap blok dalam puzzle */
+.puzzle_block {
+  position: absolute; /* Memungkinkan pemindahan blok */
+  left: 0;
+  top: 0;
+  width: 33.4%; /* Menyesuaikan ukuran dengan grid 3x3 */
+  height: 33.4%; /* Menyesuaikan ukuran dengan grid 3x3 */
+  background-color: var(--txtcol1); /* Warna latar belakang blok */
+  color: var(--whitecol); /* Warna teks pada blok */
+  font-size: 10vh; /* Ukuran teks dalam blok */
+  font-weight: bold; /* Membuat teks lebih tebal */
+  text-align: center; /* Memusatkan teks dalam blok */
+  padding-top: 3%; /* Memberikan sedikit padding atas */
+  cursor: pointer; /* Menampilkan pointer saat dihover */
+  user-select: none; /* Mencegah teks dalam blok dapat disorot */
+  transition: left 0.3s, top 0.3s; /* Animasi pergerakan blok */
+}
+
+/* Container untuk tombol tingkat kesulitan */
+#difficulty_container {
+  display: flex; /* Menggunakan flexbox untuk tata letak */
+  flex-direction: row; /* Menyusun tombol dalam satu baris */
+  width: 50vh; /* Menyesuaikan dengan lebar papan puzzle */
+  height: 10vh; /* Mengatur tinggi container */
+  background-color: var(--darkcol); /* Warna latar belakang container */
+  border-radius: 8px; /* Membuat sudut membulat */
+  margin-top: 22px; /* Memberikan jarak dari papan puzzle */
+}
+
+/* Styling untuk tombol tingkat kesulitan */
+.difficulty_button {
+  flex-grow: 1; /* Memastikan setiap tombol memiliki ukuran yang sama */
+  background-color: inherit; /* Warna tombol mengikuti container */
+  color: var(--mcol2); /* Warna teks tombol */
+  text-align: center; /* Memusatkan teks dalam tombol */
+  font-size: 3vh; /* Ukuran teks tombol */
+  font-weight: bold; /* Membuat teks lebih tebal */
+  padding-top: 5%; /* Memberikan ruang dalam tombol */
+  margin: 4px; /* Menambahkan jarak antar tombol */
+  cursor: pointer; /* Menampilkan pointer saat dihover */
+  transition: font-size 0.3s; /* Efek transisi untuk ukuran font */
+}
+
+/* Efek hover pada tombol tingkat kesulitan */
+.difficulty_button:hover {
+  opacity: 0.8; /* Membuat tombol sedikit transparan saat dihover */
+  font-size: 3.5vh; /* Membesarkan ukuran font sedikit saat dihover */
+}
+
+/* Tombol tingkat kesulitan yang sedang aktif */
+.difficulty_button.active {
+  background-color: inherit;
+  color: var(--mcol0); /* Warna biru terang untuk tombol aktif */
+}

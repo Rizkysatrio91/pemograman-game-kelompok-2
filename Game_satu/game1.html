@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta tag untuk pengaturan karakter dan kompatibilitas -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Meta tag untuk tampilan responsif -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Judul halaman web -->
+    <title>Tebak Gambar</title>
+    <!-- Menghubungkan file CSS eksternal -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Menghubungkan file JavaScript dengan atribut defer agar dijalankan setelah HTML dimuat -->
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <!-- Musik latar belakang yang akan diputar otomatis dan berulang -->
+    <audio autoplay loop>
+      <source src="assets/backsong.mp3" type="audio/mp3" />
+      Your browser does not support the audio element.
+    </audio>
+
+    <!-- Kontainer utama permainan -->
+    <div class="game">
+      <!-- Panel kontrol permainan -->
+      <div class="controls">
+        <!-- Tombol untuk keluar ke halaman game utama -->
+        <a href="/game.html"><button>Keluar</button></a>
+        <!-- Tombol untuk memulai permainan baru -->
+        <button id="start-button">Mulai</button>
+
+        <!-- Pemilihan tingkat kesulitan -->
+        <div class="level">
+          <label for="level-select">Pilih Level:</label>
+          <select id="level-select">
+            <option value="easy">Mudah</option>
+            <option value="medium">Sedang</option>
+            <option value="hard">Sulit</option>
+          </select>
+        </div>
+
+        <!-- Panel statistik permainan -->
+        <div class="stats">
+          <!-- Menampilkan jumlah langkah yang telah dilakukan -->
+          <div class="moves">0 moves</div>
+          <!-- Menampilkan waktu yang telah berlalu -->
+          <div class="timer">Time: 0 sec</div>
+        </div>
+      </div>
+
+      <!-- Kontainer papan permainan -->
+      <div class="board-container">
+        <!-- Papan permainan dengan dimensi 4x4 -->
+        <div class="board" data-dimension="4"></div>
+        <!-- Pesan kemenangan -->
+        <div class="win">You won!</div>
+      </div>
+    </div>
+
+    <!-- File audio untuk efek suara -->
+    <!-- Efek suara saat menang -->
+    <audio id="win-sound" src="assets/win.mp3" preload="auto"></audio>
+    <!-- Efek suara saat kalah -->
+    <audio id="lose-sound" src="assets/lose.mp3" preload="auto"></audio>
+
+    <!-- Pop-up untuk pesan kekalahan -->
+    <div id="lose-popup" class="popup">
+      <div class="popup-content">
+        <p>Waktu Habis Bree!</p>
+      </div>
+    </div>
+  </body>
+</html>
