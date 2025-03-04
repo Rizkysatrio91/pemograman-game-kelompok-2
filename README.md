@@ -1,4 +1,6 @@
-EdgeGames adalah proyek pengembangan game berbasis web yang mengusung konsep
+<h1>EdgeGames Nostalgia</h1>
+
+   EdgeGames adalah proyek pengembangan game berbasis web yang mengusung konsep
 nostalgia dengan berbagai permainan klasik. Proyek ini dikembangkan oleh Kelompok 2
 Pemrograman Game, dengan tujuan memberikan pengalaman bermain yang seru, mudah diakses,
 dan memiliki tampilan modern yang menarik.
