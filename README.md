@@ -1,4 +1,4 @@
-<h1>EdgeGames Nostalgia</h1>
+<h1>EdgeGames Nostalgia - Kelompok2_Pemograman Game</h1>
 
    EdgeGames adalah proyek pengembangan game berbasis web yang mengusung konsep
 nostalgia dengan berbagai permainan klasik. Proyek ini dikembangkan oleh Kelompok 2
