@@ -6,7 +6,7 @@ Pemrograman Game, dengan tujuan memberikan pengalaman bermain yang seru, mudah d
 dan memiliki tampilan modern yang menarik.
 Game yang tersedia dalam EdgeGames meliputi:
 
-<h3> 1. Catur – Permainan strategi berbasis giliran.
+<h3>  1. Catur – Permainan strategi berbasis giliran.
    
 3. Tembak Meteor – Pemain menembak meteor yang jatuh untuk mendapatkan skor.
    
