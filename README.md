@@ -5,6 +5,8 @@ dan memiliki tampilan modern yang menarik.
 Game yang tersedia dalam EdgeGames meliputi:
 
 Tampilan Halama Utama :
+![Uploading halaman utama.jpg…]()
+
 
 Tampilan Halaman Beranda berisi card game-game : 
 
