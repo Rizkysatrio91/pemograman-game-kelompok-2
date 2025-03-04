@@ -6,15 +6,17 @@ Pemrograman Game, dengan tujuan memberikan pengalaman bermain yang seru, mudah d
 dan memiliki tampilan modern yang menarik.
 Game yang tersedia dalam EdgeGames meliputi:
 
-<h3>     1. Catur – Permainan strategi berbasis giliran.
+<h3>    
+   1. Catur – Permainan strategi berbasis giliran.
    
-3. Tembak Meteor – Pemain menembak meteor yang jatuh untuk mendapatkan skor.
+2. Tembak Meteor – Pemain menembak meteor yang jatuh untuk mendapatkan skor.
    
-5. Tic Tac Toe – Permainan papan klasik untuk dua pemain.
+3. Tic Tac Toe – Permainan papan klasik untuk dua pemain.
    
-7. Tebak Gambar – Permainan edukatif yang menguji pengetahuan gambar.
+4. Tebak Gambar – Permainan edukatif yang menguji pengetahuan gambar.
    
-9. Susun Angka – Permainan logika menyusun angka secara berurutan. </h3>
+5. Susun Angka – Permainan logika menyusun angka secara berurutan.
+    </h3>
    
 <p>EdgeGames memiliki desain modern dengan tampilan gelap yang elegan. Halaman utama
 menampilkan logo game, deskripsi singkat, serta tombol "Mulai Petualangan" untuk masuk ke
