@@ -6,7 +6,7 @@ Game yang tersedia dalam EdgeGames meliputi:
 
 Tampilan Halama Utama :
 
-![Deskripsi Gambar]([https://drive.google.com/uc?export=view&id=1A2B3C4D5E6F7G8H](https://drive.google.com/file/d/13U3XelDmbRq0USSTACl-KlBKtRTG4j7m/view?usp=sharing))
+![Deskripsi Gambar]([[https://drive.google.com/uc?export=view&id=1A2B3C4D5E6F7G8H](https://drive.google.com/file/d/13U3XelDmbRq0USSTACl-KlBKtRTG4j7m/view?usp=sharing)](https://drive.google.com/file/d/13U3XelDmbRq0USSTACl-KlBKtRTG4j7m/view?usp=sharing))
 
 
 
