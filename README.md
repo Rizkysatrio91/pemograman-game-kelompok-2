@@ -34,4 +34,4 @@ dapat dilakukan untuk mengurangi redundansi dan meningkatkan efisiensi eksekusi.
 
 <i>Link Demo web game : https://web-game-kelompok-2.netlify.app/ </i>
 
-<i>Link Youtube : </i>
+<i>Link Youtube : https://youtu.be/HHXEItyw2qk?si=92-NDn4-CgZJQct4 </i>
