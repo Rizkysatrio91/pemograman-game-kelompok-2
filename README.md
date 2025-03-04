@@ -4,15 +4,6 @@ Pemrograman Game, dengan tujuan memberikan pengalaman bermain yang seru, mudah d
 dan memiliki tampilan modern yang menarik.
 Game yang tersedia dalam EdgeGames meliputi:
 
-Tampilan Halama Utama :
-
-![Deskripsi Gambar]([[https://drive.google.com/uc?export=view&id=1A2B3C4D5E6F7G8H](https://drive.google.com/file/d/13U3XelDmbRq0USSTACl-KlBKtRTG4j7m/view?usp=sharing)](https://drive.google.com/file/d/13U3XelDmbRq0USSTACl-KlBKtRTG4j7m/view?usp=sharing))
-
-
-
-
-Tampilan Halaman Beranda berisi card game-game : 
-
 1. Catur – Permainan strategi berbasis giliran.
    
 3. Tembak Meteor – Pemain menembak meteor yang jatuh untuk mendapatkan skor.
@@ -38,3 +29,5 @@ meskipun masih bisa ditingkatkan untuk dokumentasi yang lebih jelas. Optimalisas
 dapat dilakukan untuk mengurangi redundansi dan meningkatkan efisiensi eksekusi.
 
 Link Demo web game : https://web-game-kelompok-2.netlify.app/
+
+Link Youtube : 
