@@ -5,7 +5,9 @@ dan memiliki tampilan modern yang menarik.
 Game yang tersedia dalam EdgeGames meliputi:
 
 Tampilan Halama Utama :
-<img src="[https://drive.google.com/uc?export=view&id=1A2B3C4D5E6F7G8H](https://drive.google.com/file/d/13U3XelDmbRq0USSTACl-KlBKtRTG4j7m/view?usp=sharing)" width="500">
+
+![Deskripsi Gambar]([https://drive.google.com/uc?export=view&id=1A2B3C4D5E6F7G8H](https://drive.google.com/file/d/13U3XelDmbRq0USSTACl-KlBKtRTG4j7m/view?usp=sharing))
+
 
 
 
